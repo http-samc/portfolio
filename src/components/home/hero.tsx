@@ -11,11 +11,11 @@ import BlurredText from "../ui/blurred-text";
 import GitHubBadge from "../ui/github-badge";
 
 const WORDS = [
-  "comedian",
-  "motorcyclist",
-  "producer",
-  "golfer",
   "dj",
+  "woodworker",
+  "motorcyclist",
+  "golfer",
+  "producer",
   "climber",
 ];
 
@@ -56,17 +56,9 @@ const Hero = ({ location }: HeroProps) => {
           <MapPinIcon size={22} className="text-red-400 mb-2 inline-block" />
         </h2>
         <h3 className="">
-          <Balancer className="md:max-w-[40ch] text-base mt-4 italic text-gray-600 dark:text-slate-500">
-            Full stack developer.{" "}
-            <span className="dark:text-blue-700 text-violet-400">Coding</span>{" "}
-            to make the world{" "}
-            <span className="dark:text-blue-700 text-violet-400">
-              a better place
-            </span>{" "}
-            and building{" "}
-            <span className="dark:text-blue-700 text-violet-400">
-              awesome stuff
-            </span>{" "}
+          <Balancer className="md:max-w-[40ch] [&_span]:dark:text-blue-400 [&_span]:text-blue-400 text-base mt-4 italic text-gray-600 dark:text-slate-500">
+            Lifelong builder. <span>Coding</span> to make the world{" "}
+            <span>a better place</span> and building <span>awesome stuff</span>{" "}
             along the way.
             {/* <TextGenerateEffect
               className="md:max-w-[40ch] text-base mt-4 italic text-gray-700 dark:text-gray-400"
@@ -76,7 +68,7 @@ const Hero = ({ location }: HeroProps) => {
             /> */}
           </Balancer>
         </h3>
-        <p className="font-mono text-sm pt-2 text-gray-700 dark:text-gray-500">
+        <p className="font-mono text-sm pt-4 text-gray-700 dark:text-gray-500">
           [Currently] in{" "}
           <span className="underline group cursor-pointer decoration-wavy text-blue-400">
             {location}
@@ -89,7 +81,7 @@ const Hero = ({ location }: HeroProps) => {
       </div>
       <div className="flex justify-center">
         <div className="relative group h-fit">
-          <div className="absolute rounded-full -inset-2 group-hover:scale-[102%] transition-transform -z-10 bg-gradient-to-l from-sky-400 to-indigo-400 dark:from-sky-700 dark:to-indigo-600 blur"></div>
+          <div className="absolute rounded-full inset-4 group-hover:scale-125 transition-transform -z-10 bg-gradient-to-l from-sky-400 to-indigo-400 dark:from-sky-700 dark:to-indigo-600 blur"></div>
           <div className="w-44 h-44 p-4 rounded-full overflow-hidden relative group">
             <div className="absolute w-full h-full rounded-full -z-[1] brand-gradient-bg top-0 left-0 group-hover:scale-150 transition-all"></div>
             <Image

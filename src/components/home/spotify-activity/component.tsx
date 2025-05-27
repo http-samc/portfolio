@@ -63,7 +63,7 @@ const SpotifyActivity = async () => {
                 fill
               />
               <div className="hidden group-hover/card:grid w-16 -ml-2.5 aspect-square inset-0 bg-black/25 backdrop-blur-lg place-content-center">
-                <p className="text-[8px] px-0.5 text-white text-center z-40">
+                <p className="text-[8px] px-2 text-white text-center z-40">
                   {artist.name}
                 </p>
               </div>
