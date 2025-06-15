@@ -15,7 +15,7 @@ const ThemeButton = () => {
     <Button
       size="icon"
       variant="outline"
-      className="rounded-full mx-auto"
+      className="rounded-full h-8 w-8 mx-auto"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {mounted ? (
