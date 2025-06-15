@@ -1,4 +1,4 @@
-import { Image, defineField, defineType } from "sanity";
+import { File, Image, defineField, defineType } from "sanity";
 
 export default defineType({
   name: "post",
@@ -37,18 +37,26 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      // @ts-expect-error - sanity types are not up to date
       fields: [
         {
           name: "alt",
           type: "string",
           title: "Alternative Text",
         },
-      ],
+      ] as const,
+    }),
+    defineField({
+      name: "demo",
+      title: "Demo",
+      type: "file",
+      validation: (Rule) => Rule.optional(),
     }),
     defineField({
       name: "categories",
       title: "Categories",
       type: "array",
+      // @ts-expect-error - sanity types are not up to date
       of: [{ type: "reference", to: { type: "category" } }],
     }),
     defineField({
@@ -89,6 +97,7 @@ export interface Post {
   slug: {
     current: string;
   };
+  demo: File | null;
   featured: boolean;
   mainImage?: Image;
   pageType: "home" | "project" | "research" | "blog" | "essay";

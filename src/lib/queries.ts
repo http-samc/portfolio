@@ -1,8 +1,10 @@
+import { Asset, File } from "sanity";
 import { client } from "../../sanity/lib/client";
 import { Category, Post, Location, Audio } from "../../sanity/schema";
 
 export interface ExpandedPost extends Post {
   categories: Category[] | null;
+  demo: (File & { asset: Asset }) | null;
 }
 
 export const getAllAudios = () =>
@@ -21,7 +23,16 @@ export const getMostRecentLocation = () =>
 
 export const getPageById = (id: string) =>
   client
-    .fetch<ExpandedPost[]>(`*[_id=="${id}" && _type=="post"]`)
+    .fetch<ExpandedPost[]>(
+      `*[_id=="${id}" && _type=="post"] {
+    ...,
+    demo {
+      ...,
+      asset->
+    },
+    categories[]->
+  }`
+    )
     .then((result) => (result.length ? result[0] : null));
 
 export const getPagesByType = (pageType: Post["pageType"]) =>
@@ -29,6 +40,10 @@ export const getPagesByType = (pageType: Post["pageType"]) =>
     ExpandedPost[]
   >(`*[_type=="post" && pageType=="${pageType}"] | order(publishedAt desc) {
     ...,
+    demo {
+      ...,
+      asset->
+    },
     categories[]->
   }`);
 
@@ -48,6 +63,10 @@ export const getFirstPageByType = (pageType: Post["pageType"]) =>
     .fetch<ExpandedPost[]>(
       `*[_type=="post" && pageType=="${pageType}"] | order(publishedAt desc) {
     ...,
+    demo {
+      ...,
+      asset->
+    },
     categories[]->
   }`
     )
@@ -61,6 +80,10 @@ export const getPageByTypeAndSlug = (
     .fetch<ExpandedPost[]>(
       `*[_type=="post" && pageType=="${pageType}" && slug.current=="${slug}"] | order(publishedAt desc) {
     ...,
+    demo {
+      ...,
+      asset->
+    },
     categories[]->
   }`
     )
