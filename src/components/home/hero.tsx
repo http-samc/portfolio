@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Headshot from "../../../public/headshot.png";
+import Headshot from "../../../public/headshot.jpg";
 import { MapPinIcon, PlaneTakeoffIcon, PlaneIcon } from "lucide-react";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
@@ -81,11 +81,11 @@ const Hero = ({ location }: HeroProps) => {
       </div>
       <div className="flex justify-center">
         <div className="relative group h-fit">
-          <div className="absolute rounded-full inset-4 group-hover:scale-125 transition-transform -z-10 bg-gradient-to-l from-sky-400 to-indigo-400 dark:from-sky-700 dark:to-indigo-600 blur"></div>
-          <div className="w-44 h-44 p-4 rounded-full overflow-hidden relative group">
+          <div className="absolute rounded-full inset-4 group-hover:scale-125 transition-transform -z-10 bg-gradient-to-l from-sky-700 to-indigo-600 blur"></div>
+          <div className="w-44 h-44 border hover:border-0 p-4 rounded-full overflow-hidden relative group">
             <div className="absolute w-full h-full rounded-full -z-[1] brand-gradient-bg top-0 left-0 group-hover:scale-150 transition-all"></div>
             <Image
-              className="w-44 h-44 object-contain"
+              className="absolute inset-0 object-cover group-hover:grayscale group-hover:opacity-50 transition"
               src={Headshot}
               alt="Headshot of Samarth Chitgopekar"
               placeholder="blur"
