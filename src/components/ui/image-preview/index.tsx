@@ -26,7 +26,7 @@ const ImagePreview = ({
 }: ImagePreviewProps) => {
   return (
     <div className="w-full flex flex-col space-y-2 py-3">
-      <div className="border w-fit mx-auto rounded-lg overflow-hidden shadow-black/40 dark:shadow-white/5 shadow-lg">
+      <div className="border w-fit bg-black mx-auto rounded-lg overflow-hidden shadow-black/40 dark:shadow-white/5 shadow-lg">
         {browserUrl !== false && (
           <div className="flex justify-between items-center bg-gray-50 dark:bg-gray-900 w-full p-2">
             <div className="flex space-x-1.5 group w-20 pl-1">
