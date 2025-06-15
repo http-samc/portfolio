@@ -9,6 +9,7 @@ import GitHubBadge from "./github-badge";
 import Experience from "../home/experience";
 import ExperienceGrid from "../home/experience-grid";
 import SpotifyActivity from "../home/spotify-activity";
+import Socials from "./socials";
 
 interface RemoteMarkdownProps {
   markdown: string;
@@ -42,6 +43,7 @@ const RemoteMarkdown = async ({
           Experience,
           ExperienceGrid,
           SpotifyActivity,
+          Socials,
         }}
       />
     </div>
