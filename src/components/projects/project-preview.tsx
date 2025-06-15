@@ -49,15 +49,15 @@ const ProjectPreview = (project: ExpandedPost) => {
         )}
       >
         <p
-          className={cn("font-semibold", {
+          className={cn("font-semibold mt-2 lg:mt-0 text-xl", {
             "lg:text-4xl": project.featured,
           })}
         >
           {project.title}
         </p>
         <p
-          className={cn("hidden", {
-            "lg:block text-gray-700 dark:text-gray-400": project.featured,
+          className={cn("text-gray-700 dark:text-gray-400", {
+            "lg:line-clamp-2": !project.featured,
           })}
         >
           {project.description}
@@ -67,6 +67,7 @@ const ProjectPreview = (project: ExpandedPost) => {
             "overflow-hidden text-sm text-blue-400 whitespace-nowrap overflow-ellipsis font-mono",
             {
               "lg:overflow-auto lg:whitespace-normal": project.featured,
+              "lg:hidden": !project.featured,
             }
           )}
         >
