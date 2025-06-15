@@ -85,7 +85,7 @@ const Hero = ({ location }: HeroProps) => {
           <div className="w-44 h-44 border hover:border-0 p-4 rounded-full overflow-hidden relative group">
             <div className="absolute w-full h-full rounded-full -z-[1] brand-gradient-bg top-0 left-0 group-hover:scale-150 transition-all"></div>
             <Image
-              className="absolute inset-0 object-cover group-hover:grayscale group-hover:opacity-50 transition"
+              className="absolute inset-0 object-cover group-hover:opacity-50 transition"
               src={Headshot}
               alt="Headshot of Samarth Chitgopekar"
               placeholder="blur"
