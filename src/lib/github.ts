@@ -104,3 +104,79 @@ export async function getGitHubActivity(user: string) {
     return null;
   }
 }
+
+// Types for GitHub GraphQL contribution calendar
+export interface ContributionDay {
+  contributionCount: number;
+  date: string;
+}
+
+export interface ContributionWeek {
+  contributionDays: ContributionDay[];
+}
+
+export interface ContributionCalendar {
+  totalContributions: number;
+  weeks: ContributionWeek[];
+}
+
+export interface GitHubContributionGraph {
+  totalContributions: number;
+  days: ContributionDay[];
+}
+
+/**
+ * Fetches the GitHub contribution graph data for a user using the GraphQL API.
+ * @param username - The GitHub username
+ * @returns The contribution calendar data (total contributions and daily counts)
+ */
+export async function getGitHubContributionGraph(
+  username: string
+): Promise<GitHubContributionGraph | null> {
+  const query = `
+    query($userName: String!) {
+      user(login: $userName) {
+        contributionsCollection {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                contributionCount
+                date
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const variables = { userName: username };
+
+  try {
+    const res = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      },
+      body: JSON.stringify({ query, variables }),
+    });
+
+    const json = await res.json();
+    const calendar: ContributionCalendar | undefined =
+      json?.data?.user?.contributionsCollection?.contributionCalendar;
+    if (!calendar) return null;
+
+    // Flatten all days
+    const days: ContributionDay[] = calendar.weeks.flatMap(
+      (w) => w.contributionDays
+    );
+    return {
+      totalContributions: calendar.totalContributions,
+      days,
+    };
+  } catch (err) {
+    return null;
+  }
+}
