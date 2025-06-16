@@ -30,7 +30,7 @@ const ProjectPreview = (project: ExpandedPost) => {
             fill
             style={{ objectFit: "contain" }}
             alt={project.title}
-            className="p-3"
+            className="p-5"
             draggable={false}
           />
         )}
