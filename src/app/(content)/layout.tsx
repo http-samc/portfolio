@@ -47,7 +47,7 @@ export default async function RootLayout({
   return (
     <>
       <Providers>
-        <div className="fixed top-0 h-[4.5rem] w-full bg-background/80 z-40 backdrop-blur-md"></div>
+        <div className="fixed top-0 h-[3rem] w-full bg-background/80 z-40 backdrop-blur-md"></div>
         <main className="min-h-screen flex flex-col justify-between max-w-[800px] mx-auto">
           <Header posts={posts} />
           <section className="h-full mt-14 p-6">{children}</section>
