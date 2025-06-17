@@ -5,12 +5,14 @@ import {
   OptionIcon,
   CommandIcon,
 } from "lucide-react";
-import React from "react";
+import React, { cache } from "react";
 import { getFirstPageByType } from "@/lib/queries";
 import RemoteMarkdown from "@components/ui/remote-markdown";
 
+const getCachedHomePage = cache(getFirstPageByType);
+
 const CommandWindow = async () => {
-  const home = (await getFirstPageByType("home"))!;
+  const home = (await getCachedHomePage("home"))!;
 
   return (
     <div className="w-full relative group overflow-hidden rounded-lg">
