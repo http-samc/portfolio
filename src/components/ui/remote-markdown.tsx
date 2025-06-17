@@ -11,6 +11,7 @@ import ExperienceGrid from "../home/experience-grid";
 import SpotifyActivity from "../home/spotify-activity";
 import Socials from "./socials";
 import GitHubContributions from "../home/github-contributions";
+import rehypeExpressiveCode from "rehype-expressive-code";
 
 interface RemoteMarkdownProps {
   markdown: string;
@@ -46,6 +47,11 @@ const RemoteMarkdown = async ({
           ExperienceGrid,
           SpotifyActivity,
           Socials,
+        }}
+        options={{
+          mdxOptions: {
+            rehypePlugins: [rehypeExpressiveCode],
+          },
         }}
       />
     </div>
