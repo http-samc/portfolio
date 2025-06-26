@@ -6,7 +6,7 @@ const Socials = () => {
   return (
     <div className="mx-auto py-4 w-fit flex space-x-8 items-center">
       <Link
-        href="https://x.com/http_samc"
+        href="https://x.com/ialreadyshipped"
         target="_blank"
         className="!text-gray-600 dark:!text-white opacity-80 hover:opacity-100 transition-all hover:!text-purple-800 dark:hover:!text-purple-400"
       >
