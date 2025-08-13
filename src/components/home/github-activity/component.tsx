@@ -1,4 +1,4 @@
-import { getGitHubActivity } from "@/lib/github";
+import { EVENT, getGitHubActivity } from "@/lib/github";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +11,26 @@ export interface GitHubActivityProps {
 export const revalidate = 0;
 
 const GitHubActivity = async ({ user }: GitHubActivityProps) => {
-  const data = (await getGitHubActivity(user))!;
+  let data = await getGitHubActivity(user);
+
+  if (!data) {
+    data = {
+      event: {
+        action: "Committed" as unknown as EVENT,
+        message: "Private organization",
+        color: "skyblue",
+        datetimestr: new Date().toISOString(),
+      },
+      user: {
+        avatarUrl: "https://avatars.githubusercontent.com/u/67826352?v=4",
+        username: "http-samc",
+      },
+      repo: {
+        name: "<redacted>",
+        url: "https://github.com/http-samc",
+      },
+    };
+  }
 
   return (
     <div className="flex not-prose font-mono mt-2 text-xs sm:text-sm items-center justify-between p-2 mx-3 rounded border bg-white/50 dark:bg-black/25">

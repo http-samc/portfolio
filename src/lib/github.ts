@@ -5,7 +5,7 @@ export type EVENT_COLOR =
   | "pink"
   | "yellow"
   | "skyblue";
-type EVENT =
+export type EVENT =
   | "PushEvent"
   | "CreateEvent"
   | "DeleteEvent"
