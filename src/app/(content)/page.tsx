@@ -2,7 +2,6 @@ import Hero from "@/components/home/hero";
 import CommandWindow from "@/components/home/command-window";
 import { getFirstPageByType, getMostRecentLocation } from "@/lib/queries";
 import { Metadata } from "next";
-import { cache } from "react";
 import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
@@ -11,13 +10,10 @@ export const metadata: Metadata = {
   },
 };
 
-export const getCachedFirstPageByType = cache(getFirstPageByType);
-export const getCachedMostRecentLocation = cache(getMostRecentLocation);
-
 export default async function Home() {
   const [home, location] = await Promise.all([
-    getCachedFirstPageByType("home"),
-    getCachedMostRecentLocation(),
+    getFirstPageByType("home"),
+    getMostRecentLocation(),
   ]);
 
   if (!home || !location) {
