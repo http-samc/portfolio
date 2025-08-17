@@ -2,7 +2,7 @@
 
 import React from "react";
 import MobileNav from "./nav/mobile";
-import DesktopNav, { PostFragements } from "./nav/desktop";
+import DesktopNav from "./nav/desktop";
 import { NavLinkProps } from "./nav/link";
 import {
   HomeIcon,
@@ -64,7 +64,10 @@ const Header = () => {
       layoutScroll
       className="flex w-full max-w-[800px] mx-auto items-center justify-between px-6 py-2 fixed z-50"
     >
-      <Link href="/" className="brand-gradient-text font-serif italic text-xl">
+      <Link
+        href="/"
+        className="brand-gradient-text font-medium font-serif italic text-xl"
+      >
         smrth
       </Link>
       <div className="flex items-center space-x-2">

@@ -4,15 +4,16 @@ import { Metadata } from "next";
 import React from "react";
 
 interface PostProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
   params,
 }: PostProps): Promise<Metadata> {
-  const page = await getPageByTypeAndSlug("blog", params.slug);
+  const { slug } = await params;
+  const page = await getPageByTypeAndSlug("blog", slug);
   return {
     title: `[Blog] ${page?.title}`,
     description: page?.description,
@@ -21,8 +22,9 @@ export async function generateMetadata({
 
 // make this general catch-all???
 
-const Post = ({ params }: PostProps) => {
-  return <MarkdownPage pageType="blog" slug={params.slug} />;
+const Post = async ({ params }: PostProps) => {
+  const { slug } = await params;
+  return <MarkdownPage pageType="blog" slug={slug} />;
 };
 
 export default Post;

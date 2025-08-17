@@ -1,29 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Headshot from "../../../public/headshot.jpg";
-import { MapPinIcon, PlaneTakeoffIcon, PlaneIcon } from "lucide-react";
+import { MapPinIcon, PlaneIcon } from "lucide-react";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
 import DotGrid from "@/components/home/dot-grid";
-import TextTransition from "../ui/text-transition";
 import { getMostRecentLocation } from "@/lib/queries";
 
-const WORDS = [
-  "dj",
-  "woodworker",
-  "motorcyclist",
-  "golfer",
-  "producer",
-  "climber",
-];
-
 const Hero = () => {
-  const [index, setIndex] = useState(0);
   const [location, setLocation] = useState<string | null>(null);
 
   useEffect(() => {
-    const intervalId = setInterval(() => setIndex((index) => index + 1), 3000);
-
     const fetchLocation = async () => {
       const location = await getMostRecentLocation();
 
@@ -32,47 +19,25 @@ const Hero = () => {
       }
     };
     void fetchLocation();
-
-    return () => clearTimeout(intervalId);
   }, []);
 
   return (
-    <div className="flex flex-col pt-3 min-h-[calc(100vh-4.5rem)] sm:min-h-fit sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
+    <div className="flex flex-col items-center pt-3 min-h-[calc(100vh-4.5rem)] sm:min-h-fit sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
       <div className="sm:w-4/5">
-        <h1 className="text-5xl sm:text-4xl leading-tight font-extrabold">
+        <h1 className="text-5xl sm:text-4xl leading-tight font-serif">
           <Balancer>
             {"I'm "}
-            <span className="underline decoration-double underline-offset-4 decoration-blue-400 font-sans">
+            <span className="underline decoration-double underline-offset-4 decoration-blue-400 font-serif">
               Sam
             </span>
             arth Chitgopekar
           </Balancer>
         </h1>
-        <h2 className="text-lg sm:text-2xl mt-2 whitespace-nowrap">
-          A
-          <TextTransition
-            springConfig="stiff"
-            inline
-            className="mx-1.5"
-            text={WORDS[index % WORDS.length]! || "comedian"}
-          />
-          from Chicago, IL{" "}
+        <h2 className="text-lg font-serif sm:text-xl mt-2 text-gray-700 dark:text-gray-300 whitespace-nowrap">
+          A builder from Chicago, IL{" "}
           <MapPinIcon size={22} className="text-red-400 mb-2 inline-block" />
         </h2>
-        <h3 className="">
-          <Balancer className="md:max-w-[40ch] [&_span]:dark:text-blue-400 [&_span]:text-blue-400 text-base mt-4 italic text-gray-600 dark:text-slate-500">
-            Lifelong builder. <span>Coding</span> to make the world{" "}
-            <span>a better place</span> and building <span>awesome stuff</span>{" "}
-            along the way.
-            {/* <TextGenerateEffect
-              className="md:max-w-[40ch] text-base mt-4 italic text-gray-700 dark:text-gray-400"
-              words={
-                "Full stack developer. Coding to make the world a better place and building awesome stuff along the way."
-              }
-            /> */}
-          </Balancer>
-        </h3>
-        <p className="font-mono text-sm pt-4 text-gray-700 dark:text-gray-500">
+        <p className="font-mono text-sm pt-4 text-gray-600 dark:text-gray-400">
           [Currently] in{" "}
           <span className="underline group cursor-pointer decoration-wavy text-blue-400">
             {location ?? (
