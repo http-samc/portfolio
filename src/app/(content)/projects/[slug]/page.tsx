@@ -4,15 +4,16 @@ import { Metadata } from "next";
 import React from "react";
 
 interface ProjectProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
   params,
 }: ProjectProps): Promise<Metadata> {
-  const page = await getPageByTypeAndSlug("project", params.slug);
+  const { slug } = await params;
+  const page = await getPageByTypeAndSlug("project", slug);
   return {
     title: `[Project] ${page?.title}`,
     description: page?.description,
@@ -21,13 +22,10 @@ export async function generateMetadata({
 
 // make this general catch-all???
 
-const Project = ({ params }: ProjectProps) => {
+const Project = async ({ params }: ProjectProps) => {
+  const { slug } = await params;
   return (
-    <MarkdownPage
-      pageType="project"
-      slug={params.slug}
-      showPublishDate={false}
-    />
+    <MarkdownPage pageType="project" slug={slug} showPublishDate={false} />
   );
 };
 

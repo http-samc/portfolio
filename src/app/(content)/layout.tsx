@@ -3,7 +3,6 @@ import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import Providers from "@/components/layout/providers";
 import { Metadata } from "next";
-import { getAllPosts } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: {
@@ -34,22 +33,20 @@ export const metadata: Metadata = {
   },
 };
 
-// Automatically revalidate every 7 days
-export const revalidate = 60 * 60 * 24;
+// Automatically revalidate every 24 hours
+export const revalidate = 86400;
 
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const posts = await getAllPosts();
-
   return (
     <>
       <Providers>
         <div className="fixed top-0 h-[3rem] w-full bg-background/80 z-40 backdrop-blur-md"></div>
         <main className="min-h-screen flex flex-col justify-between max-w-[800px] mx-auto">
-          <Header posts={posts} />
+          <Header />
           <section className="h-full mt-14 p-6">{children}</section>
           <Footer />
         </main>

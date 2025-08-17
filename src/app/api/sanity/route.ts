@@ -6,7 +6,7 @@ import { client } from "@/../sanity/lib/client";
 import { SanityDocument } from "next-sanity";
 
 export async function POST() {
-  for (const [key, value] of headers().entries()) {
+  for (const [key, value] of (await headers()).entries()) {
     if (key !== "sanity-document-id") continue;
 
     // First try to get page since that's most common

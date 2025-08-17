@@ -54,14 +54,14 @@ const getEventTagline = (event: any): string | null => {
 };
 
 interface GitHubActivityParams {
-  user?: string;
+  user: string;
 }
 
 export async function GET(
   _: NextRequest,
-  { params }: { params: GitHubActivityParams }
+  { params }: { params: Promise<GitHubActivityParams> }
 ) {
-  const { user } = params;
+  const { user } = await params;
 
   try {
     if (!user) {

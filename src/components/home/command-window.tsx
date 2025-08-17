@@ -5,15 +5,11 @@ import {
   OptionIcon,
   CommandIcon,
 } from "lucide-react";
-import React, { cache } from "react";
-import { getFirstPageByType } from "@/lib/queries";
+import React from "react";
 import RemoteMarkdown from "@components/ui/remote-markdown";
+import { ExpandedPost } from "@/lib/queries";
 
-const getCachedHomePage = cache(getFirstPageByType);
-
-const CommandWindow = async () => {
-  const home = (await getCachedHomePage("home"))!;
-
+const CommandWindow = ({ home }: { home: ExpandedPost }) => {
   return (
     <div className="w-full relative group overflow-hidden rounded-lg">
       <div className="absolute flex justify-center items-center w-full h-full">

@@ -20,7 +20,7 @@ const GitHubContributions = async ({ user }: GitHubContributionsProps) => {
 
   return (
     <div className="bg-white/50 mx-3 mt-3 not-prose border rounded dark:bg-black/25 space-y-1 p-2">
-      <h2 className="font-medium dark:text-white text-black text-xs sm:text-base">
+      <h2 className="dark:text-white text-black text-xs sm:text-base">
         {data.totalContributions} contributions in the past year
       </h2>
       <div
