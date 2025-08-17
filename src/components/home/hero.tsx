@@ -5,10 +5,8 @@ import { MapPinIcon, PlaneTakeoffIcon, PlaneIcon } from "lucide-react";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
 import DotGrid from "@/components/home/dot-grid";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
 import TextTransition from "../ui/text-transition";
-import BlurredText from "../ui/blurred-text";
-import GitHubBadge from "../ui/github-badge";
+import { getMostRecentLocation } from "@/lib/queries";
 
 const WORDS = [
   "dj",
@@ -19,15 +17,21 @@ const WORDS = [
   "climber",
 ];
 
-interface HeroProps {
-  location: string;
-}
-
-const Hero = ({ location }: HeroProps) => {
+const Hero = () => {
   const [index, setIndex] = useState(0);
+  const [location, setLocation] = useState<string | null>(null);
 
   useEffect(() => {
     const intervalId = setInterval(() => setIndex((index) => index + 1), 3000);
+
+    const fetchLocation = async () => {
+      const location = await getMostRecentLocation();
+
+      if (location) {
+        setLocation(location.name);
+      }
+    };
+    void fetchLocation();
 
     return () => clearTimeout(intervalId);
   }, []);
@@ -71,7 +75,9 @@ const Hero = ({ location }: HeroProps) => {
         <p className="font-mono text-sm pt-4 text-gray-700 dark:text-gray-500">
           [Currently] in{" "}
           <span className="underline group cursor-pointer decoration-wavy text-blue-400">
-            {location}
+            {location ?? (
+              <div className="w-24 h-3.5 inline-flex bg-gray-500/50 rounded animate-pulse" />
+            )}
             <PlaneIcon
               className="inline-block group-hover:rotate-12 transition-transform ml-1.5 mb-2"
               size={14}
