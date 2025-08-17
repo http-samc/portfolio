@@ -1,26 +1,12 @@
-"use client";
-import React, { useEffect, useState } from "react";
+"use server";
+import React from "react";
 import Headshot from "../../../public/headshot.jpg";
 import { MapPinIcon, PlaneIcon } from "lucide-react";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
 import DotGrid from "@/components/home/dot-grid";
-import { getMostRecentLocation } from "@/lib/queries";
 
-const Hero = () => {
-  const [location, setLocation] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchLocation = async () => {
-      const location = await getMostRecentLocation();
-
-      if (location) {
-        setLocation(location.name);
-      }
-    };
-    void fetchLocation();
-  }, []);
-
+const Hero = ({ location }: { location: string }) => {
   return (
     <div className="flex flex-col items-center pt-3 min-h-[calc(100vh-4.5rem)] sm:min-h-fit sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
       <div className="sm:w-4/5">
@@ -40,9 +26,7 @@ const Hero = () => {
         <p className="font-mono text-sm pt-4 text-gray-600 dark:text-gray-400">
           [Currently] in{" "}
           <span className="underline group cursor-pointer decoration-wavy text-blue-400">
-            {location ?? (
-              <div className="w-24 h-3.5 inline-flex bg-gray-500/50 rounded animate-pulse" />
-            )}
+            {location}
             <PlaneIcon
               className="inline-block group-hover:rotate-12 transition-transform ml-1.5 mb-2"
               size={14}
