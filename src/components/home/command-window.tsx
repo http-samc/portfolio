@@ -9,10 +9,10 @@ import React, { cache } from "react";
 import { getFirstPageByType } from "@/lib/queries";
 import RemoteMarkdown from "@components/ui/remote-markdown";
 
-const getCachedHomePage = cache(getFirstPageByType);
+const getCachedHomePage = cache(() => getFirstPageByType("home"));
 
 const CommandWindow = async () => {
-  const home = (await getCachedHomePage("home"))!;
+  const home = (await getCachedHomePage())!;
 
   return (
     <div className="w-full relative group overflow-hidden rounded-lg">
