@@ -5,10 +5,8 @@ import {
   OptionIcon,
   CommandIcon,
 } from "lucide-react";
-import React, { cache } from "react";
-import { getCachedFirstPageByType } from "@/app/(content)/page";
+import React from "react";
 import RemoteMarkdown from "@components/ui/remote-markdown";
-import { notFound } from "next/navigation";
 import { ExpandedPost } from "@/lib/queries";
 
 const CommandWindow = ({ home }: { home: ExpandedPost }) => {
