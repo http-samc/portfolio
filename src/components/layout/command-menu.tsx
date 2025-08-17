@@ -9,13 +9,13 @@ import {
 } from "@/components/ui/command";
 import { useRouter } from "next/navigation";
 import { NavLinkProps } from "./nav/link";
-import { PostFragements } from "./nav/desktop";
+import { getAllPosts } from "@/lib/queries";
 
 interface CommandMenuProps {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   pages: Omit<NavLinkProps, "type">[];
-  posts: PostFragements;
+  posts: Awaited<ReturnType<typeof getAllPosts>>;
 }
 
 export function CommandMenu({ open, setOpen, pages, posts }: CommandMenuProps) {
