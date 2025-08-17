@@ -10,16 +10,21 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
 import { getAllPosts } from "@/lib/queries";
 import CommandMenu from "../command-menu";
 
-export type PostFragements = Awaited<ReturnType<typeof getAllPosts>>;
-
-interface DesktopNavProps extends NavBarProps {
-  posts: PostFragements;
-}
-
-const DesktopNav = ({ pages, posts }: DesktopNavProps) => {
+const DesktopNav = ({ pages }: NavBarProps) => {
   const [activePage, setActivePage] = useState(pages[0].href);
   const pathname = usePathname();
   const [commandOpen, setCommandOpen] = React.useState(false);
+  const [posts, setPosts] = useState(
+    [] as Awaited<ReturnType<typeof getAllPosts>>
+  );
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const posts = await getAllPosts();
+      setPosts(posts);
+    };
+    void fetchPosts();
+  }, []);
 
   useEffect(() => {
     // const { pathname } = window.location;

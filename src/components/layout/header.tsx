@@ -20,10 +20,6 @@ export interface NavBarProps {
   pages: Omit<NavLinkProps, "type">[];
 }
 
-export interface HeaderProps {
-  posts: PostFragements;
-}
-
 const PAGES: Omit<NavLinkProps, "type">[] = [
   {
     text: "home",
@@ -62,7 +58,7 @@ const PAGES: Omit<NavLinkProps, "type">[] = [
   },
 ];
 
-const Header = ({ posts }: HeaderProps) => {
+const Header = () => {
   return (
     <motion.header
       layoutScroll
@@ -72,7 +68,7 @@ const Header = ({ posts }: HeaderProps) => {
         smrth
       </Link>
       <div className="flex items-center space-x-2">
-        <DesktopNav posts={posts} pages={PAGES} />
+        <DesktopNav pages={PAGES} />
         <MobileNav pages={PAGES} />
       </div>
     </motion.header>
