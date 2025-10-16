@@ -13,21 +13,24 @@ const SpotifyActivity = async () => {
     <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between md:space-x-4 mt-2 pl-3 pr-6">
       {currentPlayback && (
         <div className="flex gap-2 bg-white/50 dark:bg-black/25 border p-2 rounded-sm min-w-fit">
-          <div className="relative w-24 h-24 flex-shrink-0 rounded-sm overflow-hidden">
-            <Image
-              src={currentPlayback.albumArt}
-              alt="album art"
-              draggable={false}
-              sizes="30vw"
-              fill
-            />
+          <div className="relative m-auto w-20 h-20 grid md:flex-grow place-content-center flex-shrink-0 rounded-full animate-jukebox overflow-hidden">
+            <div className="w-8 h-8 z-10 relative rounded-full overflow-hidden">
+              <Image
+                src={currentPlayback.albumArt}
+                alt="album art"
+                draggable={false}
+                sizes="30vw"
+                fill
+              />
+            </div>
+            <div className=" bg-black rounded-full absolute inset-0 border-[0.5px]"></div>
           </div>
-          <div className="w-[150px] flex flex-col items-start justify-between">
+          <div className="w-[150px] flex-grow md:flex-grow-0 flex flex-col items-start justify-between">
             <div className="">
-              <p className="italic font-medium line-clamp-1">
+              <p className="font-serif font-medium line-clamp-1">
                 {currentPlayback.trackName}
               </p>
-              <p className="line-clamp-1">{currentPlayback.artist}</p>
+              <p className="line-clamp-1 text-sm">{currentPlayback.artist}</p>
             </div>
             <div className="flex items-center space-x-2 pb-1">
               <p className="text-xs font-mono text-muted-foreground">
