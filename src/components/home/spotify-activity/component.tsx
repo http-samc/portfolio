@@ -26,8 +26,8 @@ const SpotifyActivity = async () => {
             <div className=" bg-black rounded-full absolute inset-0 border-[0.5px]"></div>
           </div>
           <div className="w-[150px] flex-grow md:flex-grow-0 flex flex-col items-start justify-between">
-            <div className="">
-              <p className="font-serif font-medium line-clamp-1">
+            <div className="font-serif">
+              <p className="font-serif line-clamp-1">
                 {currentPlayback.trackName}
               </p>
               <p className="line-clamp-1 text-sm">{currentPlayback.artist}</p>

@@ -14,7 +14,7 @@ const CommandWindow = ({ home }: { home: ExpandedPost }) => {
     <div className="w-full relative group overflow-hidden rounded-lg">
       <div className="absolute flex justify-center items-center w-full h-full">
         <div className="absolute -z-10 bg-card opacity-80 backdrop-blur-2xl rounded-lg h-[calc(100%-2px)] w-[calc(100%-2px)]" />
-        <div className="absolute -z-20 bg-gradient-to-r from-brand-gradient-from/75 dark:from-brand-gradient-from/50 via-brand-gradient-via/70 dark:via-brand-gradient-via/30 to-brand-gradient-to/80 dark:to-brand-gradient-to/50 rounded-lg h-[calc(100%-4px)] w-[calc(100%-4px)] scale-105 md:scale-100 md:group-hover:scale-105 md:transition-all md:duration-700 md:ease-in-out" />
+        <div className="absolute -z-20 bg-gradient-to-r from-brand-gradient-from/75 dark:from-brand-gradient-from/50 via-brand-gradient-via/70 dark:via-brand-gradient-via/30 to-brand-gradient-to/80 dark:to-brand-gradient-to/50 rounded-lg h-[calc(100%-4px)] w-[calc(100%-4px)] scale-105 md:scale-100 md:group-hover:scale-105 md:transition-all md:duration-500 md:ease-in-out" />
       </div>
       <div className="absolute flex justify-center items-center w-full h-full"></div>
       <div className="flex flex-col space-x-2 space-y-2 px-2 pt-2 pb-4 rounded-lg">
