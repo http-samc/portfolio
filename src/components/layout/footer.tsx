@@ -11,7 +11,7 @@ const Footer = () => {
         <span className="brand-gradient-text">smrth</span>
       </p> */}
         <TypewriterEffect
-          className="italic w-full text-center mt-4 text-sm"
+          className="w-full text-center mt-4 text-sm"
           words={[
             {
               text: "made",
@@ -33,7 +33,7 @@ const Footer = () => {
             },
             {
               text: "smrth",
-              className: "font-mono text-blue-400 not-italic",
+              className: "font-mono text-blue-400",
             },
           ]}
           cursorClassName="-mb-1 w-0.5 bg-blue-400 text-sm h-5"
