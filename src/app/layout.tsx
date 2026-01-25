@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 86400; // 24 hours
+export const revalidate = 3600; // 1 hour
 
 export default function RootLayout({
   children,

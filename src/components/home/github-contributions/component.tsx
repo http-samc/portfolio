@@ -7,7 +7,11 @@ export interface GitHubContributionsProps {
 }
 
 const GitHubContributions = async ({ user }: GitHubContributionsProps) => {
-  const data = (await getGitHubContributionGraph(user))!;
+  const data = await getGitHubContributionGraph(user);
+
+  if (!data) {
+    return null;
+  }
 
   const weeks = Array.from({ length: 52 }, (_, weekIdx) =>
     Array.from({ length: 7 }, (_, dayIdx) => {
