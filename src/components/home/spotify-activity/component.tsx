@@ -4,8 +4,6 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import SpotifyLogo from "@/../public/spotify-logo.png";
 
-export const revalidate = 0;
-
 const SpotifyActivity = async () => {
   const { currentPlayback, topArtists } = await getSpotifyData();
 

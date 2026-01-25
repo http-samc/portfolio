@@ -6,8 +6,6 @@ export interface GitHubContributionsProps {
   user: string;
 }
 
-export const revalidate = 0;
-
 const GitHubContributions = async ({ user }: GitHubContributionsProps) => {
   const data = (await getGitHubContributionGraph(user))!;
 

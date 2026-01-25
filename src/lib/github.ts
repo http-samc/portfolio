@@ -161,6 +161,7 @@ export async function getGitHubContributionGraph(
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
       body: JSON.stringify({ query, variables }),
+      cache: "no-store",
     });
 
     const json = await res.json();

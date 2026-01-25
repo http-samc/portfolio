@@ -8,8 +8,6 @@ export interface GitHubActivityProps {
   user: string;
 }
 
-export const revalidate = 0;
-
 const GitHubActivity = async ({ user }: GitHubActivityProps) => {
   let data = await getGitHubActivity(user);
 
