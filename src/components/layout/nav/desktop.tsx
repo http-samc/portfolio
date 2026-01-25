@@ -9,6 +9,8 @@ import { NavBarProps } from "../header";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
 import { getAllPosts } from "@/lib/queries";
 import CommandMenu from "../command-menu";
+import { DialogTitle } from "@radix-ui/react-dialog";
+import { cn } from "@/lib/utils";
 
 const DesktopNav = ({ pages }: NavBarProps) => {
   const [activePage, setActivePage] = useState(pages[0].href);
@@ -27,8 +29,6 @@ const DesktopNav = ({ pages }: NavBarProps) => {
   }, []);
 
   useEffect(() => {
-    // const { pathname } = window.location;
-
     if (pathname === "/") {
       setActivePage("/");
     } else {
@@ -63,7 +63,9 @@ const DesktopNav = ({ pages }: NavBarProps) => {
                   active={activePage === page.href}
                 />
               </TooltipTrigger>
-              <TooltipContent>
+              <TooltipContent className={cn("bg-secondary rounded-full font-serif", {
+                "hidden": activePage === page.href,
+              })}>
                 <p>{page.text}</p>
               </TooltipContent>
             </Tooltip>

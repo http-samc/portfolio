@@ -23,27 +23,27 @@ export interface NavBarProps {
 const PAGES: Omit<NavLinkProps, "type">[] = [
   {
     text: "home",
-    icon: <HomeIcon size={14} />,
+    icon: <HomeIcon size={13} />,
     href: "/",
   },
   {
     text: "projects",
-    icon: <TerminalIcon size={14} />,
+    icon: <TerminalIcon size={13} />,
     href: "/projects",
   },
   {
     text: "blog",
-    icon: <BookIcon size={14} />,
+    icon: <BookIcon size={13} />,
     href: "/blog",
   },
   {
     text: "essays",
-    icon: <ScrollTextIcon size={14} />,
+    icon: <ScrollTextIcon size={13} />,
     href: "/essays",
   },
   {
     text: "research",
-    icon: <TestTube2Icon size={14} />,
+    icon: <TestTube2Icon size={13} />,
     href: "/research",
   },
   // {

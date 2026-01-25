@@ -14,19 +14,17 @@ export interface NavLinkProps {
 const NavLink = ({ text, icon, href, type, active }: NavLinkProps) => {
   return (
     <Link
-      className={cn("flex items-center relative h-8 px-2", {
-        "text-white": active,
-      })}
+      className={cn("flex items-center relative h-8 px-2")}
       href={href}
     >
       {icon}
       {(active || type === "mobile") && (
         <>
-          <span className="ml-2 z-20">{text}</span>
+          <span className="ml-1 z-20 font-serif text-sm">{text}</span>
           {type === "desktop" && (
             <motion.span
               layoutId="active-nav-indicator"
-              className="absolute w-full inset-0 -z-10 bg-gradient-to-br from-brand-gradient-from via-brand-gradient-via to-brand-gradient-to"
+              className="absolute w-full inset-0 -z-10 bg-secondary hover:bg-gradient-to-br from-brand-gradient-from via-brand-gradient-via to-brand-gradient-to"
               style={{
                 borderRadius: 9999,
               }}
