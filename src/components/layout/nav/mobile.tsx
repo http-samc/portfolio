@@ -22,6 +22,7 @@ const MobileNav = ({ pages }: NavBarProps) => {
         </Button>
       </SheetTrigger>
       <SheetContent className="w-48 flex flex-col justify-between">
+        <SheetTitle className="sr-only">Navigation</SheetTitle>
         <div className="flex flex-col">
           {pages.map((page) => (
             <NavLink {...page} key={`mobile-nav-${page.href}`} type="mobile" />

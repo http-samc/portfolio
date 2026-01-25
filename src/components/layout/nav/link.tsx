@@ -20,7 +20,10 @@ const NavLink = ({ text, icon, href, type, active }: NavLinkProps) => {
       {icon}
       {(active || type === "mobile") && (
         <>
-          <span className="ml-1 z-20 font-serif text-sm">{text}</span>
+          <span className={cn("z-20 font-serif text-sm", {
+            "ml-1": type === "desktop",
+            "ml-2": type === "mobile",
+          })}>{text}</span>
           {type === "desktop" && (
             <motion.span
               layoutId="active-nav-indicator"
