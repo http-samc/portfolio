@@ -99,10 +99,6 @@ module.exports = {
           from: { transform: "rotate(0deg)" },
           to: { transform: "rotate(360deg)" },
         },
-        "fade-in": {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -111,7 +107,6 @@ module.exports = {
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         jukebox: "jukebox 10000ms linear infinite",
-        "fade-in": "fade-in 0.2s ease-in-out",
       },
     },
   },

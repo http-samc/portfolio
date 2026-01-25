@@ -9,13 +9,11 @@ interface CommandBlockProps {
 const CommandBlock = ({ title, children }: CommandBlockProps) => {
   return (
     <div className="flex flex-col space-y-0.5">
-      <h4 className="flex items-center space-x-1 -ml-2 animate-fade-in fade-in-60 duration-300 ease-in-out">
+      <h4 className="flex items-center space-x-1 -ml-2">
         <ChevronRightIcon size={16} />
         <span className="font-mono -mt-[2px]">{title}</span>
       </h4>
-      <div className="-ml-1 animate-fade-in fade-in-60 duration-300">
-        {children}
-      </div>
+      <div className="-ml-1">{children}</div>
     </div>
   );
 };
