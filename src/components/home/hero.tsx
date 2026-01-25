@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
 import DotGrid from "@/components/home/dot-grid";
 
-const Hero = ({ location }: { location: string }) => {
+const Hero = async ({ location }: { location: string }) => {
   return (
     <div className="flex flex-col items-center pt-3 min-h-[calc(100vh-4.5rem)] sm:min-h-fit sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
       <div className="sm:w-4/5">
