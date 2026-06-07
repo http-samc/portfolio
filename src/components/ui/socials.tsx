@@ -1,6 +1,7 @@
-import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from "lucide-react";
+import { MailIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const Socials = () => {
   return (
@@ -10,21 +11,21 @@ const Socials = () => {
         target="_blank"
         className="!text-gray-600 dark:!text-white opacity-80 hover:opacity-100 transition-all hover:!text-purple-800 dark:hover:!text-purple-400"
       >
-        <TwitterIcon />
+        <FaXTwitter size={24} />
       </Link>
       <Link
         href="https://github.com/http-samc"
         target="_blank"
         className="!text-gray-600 dark:!text-white hover:!text-purple-800 dark:hover:!text-purple-400 opacity-80 hover:opacity-100 transition-all"
       >
-        <GithubIcon />
+        <FaGithub size={24} />
       </Link>
       <Link
         href="https://www.linkedin.com/in/iamsamc/"
         target="_blank"
         className="!text-gray-600 dark:!text-white opacity-80 hover:opacity-100 transition-all hover:!text-purple-800 dark:hover:!text-purple-400"
       >
-        <LinkedinIcon />
+        <FaLinkedin size={24} />
       </Link>
       <Link
         href="mailto:snc62@cornell.edu"

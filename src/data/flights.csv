@@ -1,0 +1,128 @@
+departure_code,departure_city,departure_country,departure_country_code,departure_latitude,departure_longitude,arrival_code,arrival_city,arrival_country,arrival_country_code,arrival_latitude,arrival_longitude,distance_miles,duration_seconds
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,10080
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,8640
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,9780
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,8220
+ORD,Chicago,"United States",US,41.98,-87.900002,ZRH,"Zürich",Switzerland,CH,47.451504,8.5623,4432,31320
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,8760
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,10080
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,9420
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,10680
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,8760
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,10920
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,8280
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,9180
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,10320
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,9420
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,9840
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,8580
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,11880
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,8940
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,8580
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,8280
+IAH,Houston,"United States",US,29.98,-95.339996,DEN,Denver,"United States",US,39.849998,-104.669998,862,7980
+DEN,Denver,"United States",US,39.849998,-104.669998,IAH,Houston,"United States",US,29.98,-95.339996,862,7860
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,9240
+MCO,Orlando,"United States",US,28.43,-81.309998,IAH,Houston,"United States",US,29.98,-95.339996,853,9060
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,9240
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,9660
+IAH,Houston,"United States",US,29.98,-95.339996,SAV,Savannah,"United States",US,32.139999,-81.209999,849,9540
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,9180
+IAH,Houston,"United States",US,29.98,-95.339996,BWI,Baltimore,"United States",US,39.18,-76.669998,1234,10740
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,8160
+ATL,Atlanta,"United States",US,33.639999,-84.440002,IAH,Houston,"United States",US,29.98,-95.339996,688,8160
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,9720
+ORD,Chicago,"United States",US,41.98,-87.900002,IAH,Houston,"United States",US,29.98,-95.339996,926,9660
+EWR,Newark,"United States",US,40.689999,-74.18,ORD,Chicago,"United States",US,41.98,-87.900002,716,8760
+IAH,Houston,"United States",US,29.98,-95.339996,ORD,Chicago,"United States",US,41.98,-87.900002,926,9000
+EWR,Newark,"United States",US,40.689999,-74.18,IAH,Houston,"United States",US,29.98,-95.339996,1398,13260
+IAH,Houston,"United States",US,29.98,-95.339996,EWR,Newark,"United States",US,40.689999,-74.18,1398,11460
+ITH,Ithaca,"United States",US,42.490002,-76.459999,JFK,"New York","United States",US,40.639999,-73.790001,188,3600
+JFK,"New York","United States",US,40.639999,-73.790001,ORD,Chicago,"United States",US,41.98,-87.900002,738,9660
+ORD,Chicago,"United States",US,41.98,-87.900002,SYR,Syracuse,"United States",US,43.110001,-76.110001,605,5160
+EWR,Newark,"United States",US,40.689999,-74.18,IAH,Houston,"United States",US,29.98,-95.339996,1398,13620
+IAH,Houston,"United States",US,29.98,-95.339996,EWR,Newark,"United States",US,40.689999,-74.18,1398,12660
+EWR,Newark,"United States",US,40.689999,-74.18,IAH,Houston,"United States",US,29.98,-95.339996,1398,12300
+CMH,Columbus,"United States",US,40.0,-82.879997,SFO,"San Francisco","United States",US,37.619999,-122.389999,2116,18720
+ORD,Chicago,"United States",US,41.98,-87.900002,EWR,Newark,"United States",US,40.689999,-74.18,716,7680
+EWR,Newark,"United States",US,40.689999,-74.18,SYR,Syracuse,"United States",US,43.110001,-76.110001,194,4200
+ITH,Ithaca,"United States",US,42.490002,-76.459999,JFK,"New York","United States",US,40.639999,-73.790001,188,3960
+JFK,"New York","United States",US,40.639999,-73.790001,CMH,Columbus,"United States",US,40.0,-82.879997,481,6360
+CMH,Columbus,"United States",US,40.0,-82.879997,JFK,"New York","United States",US,40.639999,-73.790001,481,7080
+JFK,"New York","United States",US,40.639999,-73.790001,ITH,Ithaca,"United States",US,42.490002,-76.459999,188,4080
+CMH,Columbus,"United States",US,40.0,-82.879997,EWR,Newark,"United States",US,40.689999,-74.18,460,6660
+ITH,Ithaca,"United States",US,42.490002,-76.459999,EWR,Newark,"United States",US,40.689999,-74.18,171,4140
+EWR,Newark,"United States",US,40.689999,-74.18,ITH,Ithaca,"United States",US,42.490002,-76.459999,171,4680
+ITH,Ithaca,"United States",US,42.490002,-76.459999,EWR,Newark,"United States",US,40.689999,-74.18,171,3960
+EWR,Newark,"United States",US,40.689999,-74.18,BNA,Nashville,"United States",US,36.130001,-86.669998,745,8640
+BNA,Nashville,"United States",US,36.130001,-86.669998,EWR,Newark,"United States",US,40.689999,-74.18,745,9420
+EWR,Newark,"United States",US,40.689999,-74.18,ITH,Ithaca,"United States",US,42.490002,-76.459999,171,5760
+ORD,Chicago,"United States",US,41.98,-87.900002,SFO,"San Francisco","United States",US,37.619999,-122.389999,1843,15660
+SJC,"San Jose","United States",US,37.364182,-121.9235,ORD,Chicago,"United States",US,41.98,-87.900002,1825,13860
+ORD,Chicago,"United States",US,41.98,-87.900002,DEN,Denver,"United States",US,39.849998,-104.669998,887,8760
+DEN,Denver,"United States",US,39.849998,-104.669998,SJC,"San Jose","United States",US,37.364182,-121.9235,946,9660
+SJC,"San Jose","United States",US,37.364182,-121.9235,ORD,Chicago,"United States",US,41.98,-87.900002,1825,15240
+OAK,Oakland,"United States",US,37.709999,-122.209999,BUR,Burbank,"United States",US,34.200001,-118.349998,324,4020
+LAX,"Los Angeles","United States",US,33.939999,-118.410004,OAK,Oakland,"United States",US,37.709999,-122.209999,336,4260
+SFO,"San Francisco","United States",US,37.619999,-122.389999,ORD,Chicago,"United States",US,41.98,-87.900002,1843,14880
+ORD,Chicago,"United States",US,41.98,-87.900002,MSY,"New Orleans","United States",US,29.98,-90.260002,839,9000
+MSY,"New Orleans","United States",US,29.98,-90.260002,DFW,Dallas,"United States",US,32.900002,-97.040001,447,5640
+DFW,Dallas,"United States",US,32.900002,-97.040001,ORD,Chicago,"United States",US,41.98,-87.900002,802,8280
+ITH,Ithaca,"United States",US,42.490002,-76.459999,JFK,"New York","United States",US,40.639999,-73.790001,188,4200
+JFK,"New York","United States",US,40.639999,-73.790001,ITH,Ithaca,"United States",US,42.490002,-76.459999,188,4620
+ITH,Ithaca,"United States",US,42.490002,-76.459999,EWR,Newark,"United States",US,40.689999,-74.18,171,3840
+ITH,Ithaca,"United States",US,42.490002,-76.459999,EWR,Newark,"United States",US,40.689999,-74.18,171,4320
+EWR,Newark,"United States",US,40.689999,-74.18,CMH,Columbus,"United States",US,40.0,-82.879997,460,6540
+CMH,Columbus,"United States",US,40.0,-82.879997,EWR,Newark,"United States",US,40.689999,-74.18,460,6480
+EWR,Newark,"United States",US,40.689999,-74.18,ITH,Ithaca,"United States",US,42.490002,-76.459999,171,5160
+ITH,Ithaca,"United States",US,42.490002,-76.459999,JFK,"New York","United States",US,40.639999,-73.790001,188,5160
+JFK,"New York","United States",US,40.639999,-73.790001,ORD,Chicago,"United States",US,41.98,-87.900002,738,9720
+ORD,Chicago,"United States",US,41.98,-87.900002,YYC,Calgary,Canada,CA,51.130001,-114.010002,1382,13020
+YYC,Calgary,Canada,CA,51.130001,-114.010002,YOW,Ottawa,Canada,CA,45.32,-75.669998,1788,13680
+YOW,Ottawa,Canada,CA,45.32,-75.669998,ORD,Chicago,"United States",US,41.98,-87.900002,652,8940
+ORD,Chicago,"United States",US,41.98,-87.900002,JFK,"New York","United States",US,40.639999,-73.790001,738,7680
+JFK,"New York","United States",US,40.639999,-73.790001,ITH,Ithaca,"United States",US,42.490002,-76.459999,188,4380
+SYR,Syracuse,"United States",US,43.110001,-76.110001,JFK,"New York","United States",US,40.639999,-73.790001,208,4320
+JFK,"New York","United States",US,40.639999,-73.790001,LHR,London,"United Kingdom",GB,51.470001,-0.45,3443,23520
+LHR,London,"United Kingdom",GB,51.470001,-0.45,JFK,"New York","United States",US,40.639999,-73.790001,3443,27840
+JFK,"New York","United States",US,40.639999,-73.790001,SYR,Syracuse,"United States",US,43.110001,-76.110001,208,4920
+ITH,Ithaca,"United States",US,42.490002,-76.459999,IAD,"Washington DC","United States",US,38.950001,-77.449997,250,4680
+IAD,"Washington DC","United States",US,38.950001,-77.449997,ORD,Chicago,"United States",US,41.98,-87.900002,587,7320
+ORD,Chicago,"United States",US,41.98,-87.900002,JFK,"New York","United States",US,40.639999,-73.790001,738,8280
+LGA,"New York","United States",US,40.77,-73.870003,ORD,Chicago,"United States",US,41.98,-87.900002,731,9060
+IAD,"Washington DC","United States",US,38.950001,-77.449997,SFO,"San Francisco","United States",US,37.619999,-122.389999,2414,19260
+ORD,Chicago,"United States",US,41.98,-87.900002,SFO,"San Francisco","United States",US,37.619999,-122.389999,1843,16380
+SFO,"San Francisco","United States",US,37.619999,-122.389999,BOS,Boston,"United States",US,42.369999,-71.019997,2697,22020
+BOS,Boston,"United States",US,42.369999,-71.019997,SFO,"San Francisco","United States",US,37.619999,-122.389999,2697,22740
+SFO,"San Francisco","United States",US,37.619999,-122.389999,CLT,Charlotte,"United States",US,35.220001,-80.940002,2292,18960
+CLT,Charlotte,"United States",US,35.220001,-80.940002,BDL,Hartford,"United States",US,41.93,-72.68,643,6600
+SFO,"San Francisco","United States",US,37.619999,-122.389999,ORD,Chicago,"United States",US,41.98,-87.900002,1843,15360
+ORD,Chicago,"United States",US,41.98,-87.900002,IAD,"Washington DC","United States",US,38.950001,-77.449997,587,10800
+IAD,"Washington DC","United States",US,38.950001,-77.449997,ITH,Ithaca,"United States",US,42.490002,-76.459999,250,3960
+IAD,"Washington DC","United States",US,38.950001,-77.449997,ITH,Ithaca,"United States",US,42.490002,-76.459999,250,5100
+IAD,"Washington DC","United States",US,38.950001,-77.449997,DEN,Denver,"United States",US,39.849998,-104.669998,1449,12180
+DEN,Denver,"United States",US,39.849998,-104.669998,SYR,Syracuse,"United States",US,43.110001,-76.110001,1488,12060
+JFK,"New York","United States",US,40.639999,-73.790001,DOH,Doha,Qatar,QA,25.26,51.610001,6693,42660
+DOH,Doha,Qatar,QA,25.26,51.610001,JFK,"New York","United States",US,40.639999,-73.790001,6693,49140
+ITH,Ithaca,"United States",US,42.490002,-76.459999,IAD,"Washington DC","United States",US,38.950001,-77.449997,250,4980
+IAD,"Washington DC","United States",US,38.950001,-77.449997,ORD,Chicago,"United States",US,41.98,-87.900002,587,7560
+ORD,Chicago,"United States",US,41.98,-87.900002,BDL,Hartford,"United States",US,41.93,-72.68,781,8820
+ORD,Chicago,"United States",US,41.98,-87.900002,ATL,Atlanta,"United States",US,33.639999,-84.440002,606,5760
+ATL,Atlanta,"United States",US,33.639999,-84.440002,SYR,Syracuse,"United States",US,43.110001,-76.110001,794,8100
+SYR,Syracuse,"United States",US,43.110001,-76.110001,ORD,Chicago,"United States",US,41.98,-87.900002,605,9360
+ORD,Chicago,"United States",US,41.98,-87.900002,BDL,Hartford,"United States",US,41.93,-72.68,781,7680
+BDL,Hartford,"United States",US,41.93,-72.68,ATL,Atlanta,"United States",US,33.639999,-84.440002,859,11940
+ATL,Atlanta,"United States",US,33.639999,-84.440002,ORD,Chicago,"United States",US,41.98,-87.900002,606,7440
+ORD,Chicago,"United States",US,41.98,-87.900002,EWR,Newark,"United States",US,40.689999,-74.18,716,7860
+EWR,Newark,"United States",US,40.689999,-74.18,LAX,"Los Angeles","United States",US,33.939999,-118.410004,2448,21240
+LAX,"Los Angeles","United States",US,33.939999,-118.410004,LAS,"Las Vegas","United States",US,36.080002,-115.150002,236,3900
+LAS,"Las Vegas","United States",US,36.080002,-115.150002,DTW,Detroit,"United States",US,42.209999,-83.360001,1744,13860
+DTW,Detroit,"United States",US,42.209999,-83.360001,EWR,Newark,"United States",US,40.689999,-74.18,487,5700
+JFK,"New York","United States",US,40.639999,-73.790001,LHR,London,"United Kingdom",GB,51.470001,-0.45,3443,24780
+LHR,London,"United Kingdom",GB,51.470001,-0.45,BCN,Barcelona,Spain,ES,41.299999,2.08,713,8640
+BCN,Barcelona,Spain,ES,41.299999,2.08,LHR,London,"United Kingdom",GB,51.470001,-0.45,713,7680
+LHR,London,"United Kingdom",GB,51.470001,-0.45,JFK,"New York","United States",US,40.639999,-73.790001,3443,28260
+JFK,"New York","United States",US,40.639999,-73.790001,SFO,"San Francisco","United States",US,37.619999,-122.389999,2580,24060
+PMI,"Palma de Mallorca",Spain,ES,39.549999,2.73,BCN,Barcelona,Spain,ES,41.299999,2.08,126,3300
+BCN,Barcelona,Spain,ES,41.299999,2.08,PMI,"Palma de Mallorca",Spain,ES,39.549999,2.73,126,2340
+SFO,"San Francisco","United States",US,37.619999,-122.389999,JFK,"New York","United States",US,40.639999,-73.790001,2580,23220
