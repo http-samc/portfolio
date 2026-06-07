@@ -24,7 +24,7 @@ const Experience = ({
   company,
   title,
   logoUrl,
-  affiliates,
+  affiliates = [],
   ...styles
 }: ExperienceProps) => {
   return (
