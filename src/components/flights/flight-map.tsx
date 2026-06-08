@@ -283,7 +283,7 @@ export default function FlightMap({ flights, className }: FlightsMapProps) {
           className
         )}
       >
-        <div className="flex flex-col gap-3 px-4 py-2 items-start sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 px-3 sm:px-4 py-2 items-start sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center space-x-1.5 text-base sm:text-lg">
             <TicketsPlane className="w-4 h-4 sm:w-5 sm:h-5" />
             <h2 className="font-serif leading-tight">smrth's passport</h2>
