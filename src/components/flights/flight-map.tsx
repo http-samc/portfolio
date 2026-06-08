@@ -278,40 +278,38 @@ export default function FlightMap({ flights, className }: FlightsMapProps) {
   return (
     <section
       className={cn(
-        "overflow-hidden rounded-md border border-border bg-card text-card-foreground shadow-sm",
+        "not-prose mx-3 mt-2 overflow-hidden rounded border bg-white/50 text-card-foreground dark:bg-black/25",
         className
       )}
     >
-      <div className="flex flex-col gap-4 p-4 items-start sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center text-xl sm:text-2xl space-x-1.5">
-          <TicketsPlane className="inline-block" />
-          <h2 className="font-serif leading-tight">
-            smrth's passport
-          </h2>
+      <div className="flex flex-col gap-3 p-2 items-start sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center space-x-1.5 text-base sm:text-lg">
+          <TicketsPlane className="h-4 w-4 sm:h-5 sm:w-5" />
+          <h2 className="font-serif leading-tight">smrth's passport</h2>
         </div>
-        <dl className="gap-8 text-right justify-end font-mono text-xs hidden sm:flex sm:min-w-[18rem]">
+        <dl className="gap-6 text-right justify-end font-mono text-xs hidden sm:flex sm:min-w-[15rem]">
           <div>
             <dt className="text-muted-foreground">Flights</dt>
-            <dd className="text-lg font-semibold text-foreground">
+            <dd className="text-base font-semibold text-foreground">
               {flights.length.toLocaleString()}
             </dd>
           </div>
           <div>
             <dt className="text-muted-foreground">Hours</dt>
-            <dd className="text-lg font-semibold text-foreground">
+            <dd className="text-base font-semibold text-foreground">
               {formatHours(stats.totalDurationSeconds)}
             </dd>
           </div>
           <div>
             <dt className="text-muted-foreground">Miles</dt>
-            <dd className="text-lg font-semibold text-foreground">
+            <dd className="text-base font-semibold text-foreground">
               {formatMiles(stats.totalDistanceMiles)}
             </dd>
           </div>
         </dl>
       </div>
 
-      <div className="group/map relative h-[190px] border-y border-border bg-sky-100 dark:bg-slate-950 sm:h-[300px]">
+      <div className="group/map relative h-[170px] border-y bg-sky-100 dark:bg-slate-950 sm:h-[240px]">
         <div className="absolute right-3 top-3 z-10 flex overflow-hidden rounded-sm border border-white/40 bg-white/80 opacity-35 shadow-sm backdrop-blur transition-opacity duration-200 group-hover/map:opacity-100 focus-within:opacity-100 dark:border-slate-700/80 dark:bg-slate-900/80">
           <button
             type="button"
@@ -440,11 +438,11 @@ export default function FlightMap({ flights, className }: FlightsMapProps) {
         </svg>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2 p-3">
+      <div className="flex flex-wrap items-center gap-2 p-2">
         {stats.countries.map((country) => (
           <span
             key={country.code}
-            className="inline-flex h-8 items-center gap-1.5 rounded-sm border border-border bg-background px-2 font-mono text-xs text-muted-foreground"
+            className="inline-flex h-7 items-center gap-1.5 rounded-sm border bg-background px-2 font-mono text-xs text-muted-foreground"
             title={country.name}
           >
             <span className="text-base leading-none" aria-hidden="true">
