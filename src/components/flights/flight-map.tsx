@@ -278,13 +278,13 @@ export default function FlightMap({ flights, className }: FlightsMapProps) {
   return (
     <section
       className={cn(
-        "not-prose mx-3 mt-2 overflow-hidden rounded border bg-white/50 text-card-foreground dark:bg-black/25",
+        "not-prose mx-3 mt-2 w-[calc(100%-1.5rem)] overflow-hidden rounded border bg-white/50 text-card-foreground dark:bg-black/25",
         className
       )}
     >
-      <div className="flex flex-col gap-3 p-2 items-start sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center space-x-1.5 text-base sm:text-lg">
-          <TicketsPlane className="h-4 w-4 sm:h-5 sm:w-5" />
+      <div className="flex flex-col gap-3 px-4 py-3 items-start sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center space-x-1.5 text-sm sm:text-base">
+          <TicketsPlane className="h-4 w-4" />
           <h2 className="font-serif leading-tight">smrth's passport</h2>
         </div>
         <dl className="gap-6 text-right justify-end font-mono text-xs hidden sm:flex sm:min-w-[15rem]">
