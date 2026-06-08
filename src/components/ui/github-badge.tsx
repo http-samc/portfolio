@@ -1,6 +1,6 @@
-import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { FaGithub } from "react-icons/fa6";
 
 interface GitHubBadgeProps {
   owner?: string;
@@ -13,7 +13,7 @@ const GitHubBadge = ({ owner, repo }: GitHubBadgeProps) => {
       href={`https://github.com/${owner}/${repo}`}
       className="inline-flex mx-1.5 px-2 py-1 no-underline items-center bg-[#1b1c1d] dark:bg-black space-x-1.5 w-fit rounded-lg !text-white"
     >
-      <GithubIcon size={14} className="mt-px" />
+      <FaGithub size={14} className="mt-px" />
       <span className="text-sm">{repo || owner}</span>
     </Link>
   );
