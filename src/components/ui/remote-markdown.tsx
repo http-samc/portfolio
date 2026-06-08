@@ -13,6 +13,7 @@ import Socials from "./socials";
 import GitHubContributions from "../home/github-contributions";
 import rehypeExpressiveCode from "rehype-expressive-code";
 import FlightMap from "@/components/flights";
+import Garage from "../home/garage";
 
 interface RemoteMarkdownProps {
   markdown: string;
@@ -49,6 +50,7 @@ const RemoteMarkdown = async ({
           SpotifyActivity,
           Socials,
           FlightMap,
+          Garage,
         }}
         options={{
           blockJS: false,
