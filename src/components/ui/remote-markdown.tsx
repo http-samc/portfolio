@@ -51,6 +51,7 @@ const RemoteMarkdown = async ({
           FlightMap,
         }}
         options={{
+          blockJS: false,
           mdxOptions: {
             rehypePlugins: [rehypeExpressiveCode],
           },
