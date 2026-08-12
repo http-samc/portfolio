@@ -126,3 +126,12 @@ JFK,"New York","United States",US,40.639999,-73.790001,SFO,"San Francisco","Unit
 PMI,"Palma de Mallorca",Spain,ES,39.549999,2.73,BCN,Barcelona,Spain,ES,41.299999,2.08,126,3300
 BCN,Barcelona,Spain,ES,41.299999,2.08,PMI,"Palma de Mallorca",Spain,ES,39.549999,2.73,126,2340
 SFO,"San Francisco","United States",US,37.619999,-122.389999,JFK,"New York","United States",US,40.639999,-73.790001,2580,23220
+LGA,"New York","United States",US,40.77,-73.870003,ORD,Chicago,"United States",US,41.98,-87.900002,731,8520
+ORD,Chicago,"United States",US,41.98,-87.900002,LGA,"New York","United States",US,40.77,-73.870003,731,9780
+LGA,"New York","United States",US,40.77,-73.870003,ORD,Chicago,"United States",US,41.98,-87.900002,731,9660
+ORD,Chicago,"United States",US,41.98,-87.900002,LGA,"New York","United States",US,40.77,-73.870003,731,8040
+JFK,"New York","United States",US,40.639999,-73.790001,SFO,"San Francisco","United States",US,37.619999,-122.389999,2580,20460
+SFO,"San Francisco","United States",US,37.619999,-122.389999,JFK,"New York","United States",US,40.639999,-73.790001,2580,19320
+LGA,"New York","United States",US,40.77,-73.870003,ORD,Chicago,"United States",US,41.98,-87.900002,731,9720
+JFK,"New York","United States",US,40.639999,-73.790001,ATL,Atlanta,"United States",US,33.639999,-84.440002,759,11280
+ATL,Atlanta,"United States",US,33.639999,-84.440002,BDL,Hartford,"United States",US,41.93,-72.68,859,9180
