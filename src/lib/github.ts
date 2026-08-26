@@ -60,7 +60,7 @@ export async function getGitHubActivity(user: string) {
 
     let events = await fetch(`https://api.github.com/users/${user}/events`, {
       headers: { Authorization: `token ${process.env.GITHUB_TOKEN}` },
-      cache: "no-store",
+      next: { revalidate: 60 },
     }).then((res) => res.json());
 
     let event = null;
@@ -161,7 +161,7 @@ export async function getGitHubContributionGraph(
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
       body: JSON.stringify({ query, variables }),
-      cache: "no-store",
+      next: { revalidate: 60 },
     });
 
     const json = await res.json();
