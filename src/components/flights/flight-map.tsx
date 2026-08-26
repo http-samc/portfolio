@@ -1,133 +1,25 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { geoEquirectangular, geoPath } from "d3-geo";
 import { RotateCcwIcon, ZoomInIcon, ZoomOutIcon, TicketsPlane } from "lucide-react";
-import { useCallback, useMemo, useRef, useState } from "react";
-import { feature } from "topojson-client";
-import world from "world-atlas/land-110m.json";
-
-export type FlightRoute = {
-  departureCode: string;
-  departureCity: string;
-  departureCountry: string;
-  departureCountryCode: string;
-  departureLatitude: number;
-  departureLongitude: number;
-  arrivalCode: string;
-  arrivalCity: string;
-  arrivalCountry: string;
-  arrivalCountryCode: string;
-  arrivalLatitude: number;
-  arrivalLongitude: number;
-  distanceMiles: number;
-  durationSeconds: number;
-};
-
-type CountryVisit = {
-  code: string;
-  name: string;
-};
+import { useCallback, useRef, useState } from "react";
+import {
+  clamp,
+  clampTransform,
+  gridStep,
+  height,
+  maxZoom,
+  minZoom,
+  width,
+  zoomStep,
+  type FlightMapData,
+  type MapTransform,
+} from "./constants";
 
 type FlightsMapProps = {
-  flights: FlightRoute[];
+  data: FlightMapData;
   className?: string;
 };
-
-type LandTopology = {
-  objects: {
-    land: Parameters<typeof feature>[1];
-  };
-};
-
-const width = 1000;
-const height = 430;
-const defaultZoom = 1.45;
-const minZoom = defaultZoom;
-const maxZoom = 2.6;
-const zoomStep = 1.28;
-const gridStep = 50;
-const defaultCenter = {
-  longitude: -37.0668,
-  latitude: 41.5,
-};
-const projection = geoEquirectangular()
-  .translate([width / 2, height / 2 + 78])
-  .scale(width / (2 * Math.PI));
-
-const landTopology = world as LandTopology;
-const land = feature(
-  landTopology as unknown as Parameters<typeof feature>[0],
-  landTopology.objects.land
-);
-
-const landPath = geoPath(projection)(land) ?? "";
-
-type MapTransform = {
-  scale: number;
-  x: number;
-  y: number;
-};
-
-function clamp(value: number, min: number, max: number) {
-  return Math.min(max, Math.max(min, value));
-}
-
-function getCenteredTransform(
-  longitude: number,
-  latitude: number,
-  scale: number
-): MapTransform {
-  const point = project(longitude, latitude);
-
-  return {
-    scale,
-    x: clamp(width / 2 - point.x * scale, width * (1 - scale), 0),
-    y: clamp(height / 2 - point.y * scale, height * (1 - scale), 0),
-  };
-}
-
-const defaultTransform = getCenteredTransform(
-  defaultCenter.longitude,
-  defaultCenter.latitude,
-  defaultZoom
-);
-
-function clampTransform(transform: MapTransform): MapTransform {
-  const scale = clamp(transform.scale, minZoom, maxZoom);
-
-  return {
-    scale,
-    x: clamp(transform.x, width * (1 - scale), 0),
-    y: clamp(transform.y, height * (1 - scale), 0),
-  };
-}
-
-function project(longitude: number, latitude: number) {
-  const point = projection([longitude, latitude]);
-
-  return {
-    x: point?.[0] ?? 0,
-    y: point?.[1] ?? 0,
-  };
-}
-
-function routePath(flight: FlightRoute) {
-  const start = project(flight.departureLongitude, flight.departureLatitude);
-  const end = project(flight.arrivalLongitude, flight.arrivalLatitude);
-  const dx = end.x - start.x;
-  const dy = end.y - start.y;
-  const distance = Math.hypot(dx, dy);
-  const bow = Math.min(92, Math.max(18, distance * 0.18));
-  const normalX = distance === 0 ? 0 : -dy / distance;
-  const normalY = distance === 0 ? 0 : dx / distance;
-  const controlX = (start.x + end.x) / 2 + normalX * bow;
-  const controlY = (start.y + end.y) / 2 + normalY * bow;
-
-  return `M ${start.x.toFixed(2)} ${start.y.toFixed(2)} Q ${controlX.toFixed(
-    2
-  )} ${controlY.toFixed(2)} ${end.x.toFixed(2)} ${end.y.toFixed(2)}`;
-}
 
 function formatHours(seconds: number) {
   return Math.round(seconds / 3600).toLocaleString();
@@ -149,47 +41,8 @@ function flagEmoji(countryCode: string) {
     );
 }
 
-function getStats(flights: FlightRoute[]) {
-  const countriesByCode = new Map<string, CountryVisit>();
-  const airportsByCode = new Map<string, { code: string; city: string }>();
-
-  for (const flight of flights) {
-    countriesByCode.set(flight.departureCountryCode, {
-      code: flight.departureCountryCode,
-      name: flight.departureCountry,
-    });
-    countriesByCode.set(flight.arrivalCountryCode, {
-      code: flight.arrivalCountryCode,
-      name: flight.arrivalCountry,
-    });
-    airportsByCode.set(flight.departureCode, {
-      code: flight.departureCode,
-      city: flight.departureCity,
-    });
-    airportsByCode.set(flight.arrivalCode, {
-      code: flight.arrivalCode,
-      city: flight.arrivalCity,
-    });
-  }
-
-  return {
-    countries: Array.from(countriesByCode.values()).sort((a, b) =>
-      a.name.localeCompare(b.name)
-    ),
-    airports: Array.from(airportsByCode.values()),
-    totalDistanceMiles: flights.reduce(
-      (total, flight) => total + flight.distanceMiles,
-      0
-    ),
-    totalDurationSeconds: flights.reduce(
-      (total, flight) => total + flight.durationSeconds,
-      0
-    ),
-  };
-}
-
-export default function FlightMap({ flights, className }: FlightsMapProps) {
-  const stats = useMemo(() => getStats(flights), [flights]);
+export default function FlightMap({ data, className }: FlightsMapProps) {
+  const { landPath, routePaths, airports, defaultTransform, stats } = data;
   const svgRef = useRef<SVGSVGElement>(null);
   const dragPoint = useRef<{ x: number; y: number } | null>(null);
   const [transform, setTransform] = useState<MapTransform>(defaultTransform);
@@ -261,7 +114,7 @@ export default function FlightMap({ flights, className }: FlightsMapProps) {
         })
       );
     },
-    [getSvgPoint, transform.scale]
+    [getSvgPoint]
   );
 
   const handlePointerUp = useCallback(
@@ -292,7 +145,7 @@ export default function FlightMap({ flights, className }: FlightsMapProps) {
             <div>
               <dt className="text-muted-foreground">Flights</dt>
               <dd className="text-sm font-semibold text-foreground">
-                {flights.length.toLocaleString()}
+                {stats.flightCount.toLocaleString()}
               </dd>
             </div>
             <div>
@@ -398,10 +251,10 @@ export default function FlightMap({ flights, className }: FlightsMapProps) {
               )}
               <path d={landPath} className="fill-slate-300 dark:fill-slate-600" />
               <g fill="none" strokeLinecap="round">
-                {flights.map((flight, index) => (
+                {routePaths.map((path, index) => (
                   <path
-                    key={`${flight.departureCode}-${flight.arrivalCode}-${index}`}
-                    d={routePath(flight)}
+                    key={`route-${index}`}
+                    d={path}
                     stroke="hsl(var(--brand-gradient-via))"
                     strokeWidth="1.45"
                     opacity="0.36"
@@ -410,30 +263,17 @@ export default function FlightMap({ flights, className }: FlightsMapProps) {
                 ))}
               </g>
               <g>
-                {stats.airports.map((airport) => {
-                  const flight = flights.find(
-                    (item) =>
-                      item.departureCode === airport.code ||
-                      item.arrivalCode === airport.code
-                  );
-                  if (!flight) return null;
-                  const point =
-                    flight.departureCode === airport.code
-                      ? project(flight.departureLongitude, flight.departureLatitude)
-                      : project(flight.arrivalLongitude, flight.arrivalLatitude);
-
-                  return (
-                    <circle
-                      key={airport.code}
-                      cx={point.x}
-                      cy={point.y}
-                      r="2.4"
-                      fill="hsl(var(--foreground))"
-                      opacity="0.62"
-                      vectorEffect="non-scaling-stroke"
-                    />
-                  );
-                })}
+                {airports.map((airport) => (
+                  <circle
+                    key={airport.code}
+                    cx={airport.x}
+                    cy={airport.y}
+                    r="2.4"
+                    fill="hsl(var(--foreground))"
+                    opacity="0.62"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                ))}
               </g>
             </g>
           </svg>

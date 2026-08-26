@@ -5,7 +5,24 @@ import { cn } from "@/lib/utils";
 import SpotifyLogo from "@/../public/spotify-logo.png";
 
 const SpotifyActivity = async () => {
-  const { currentPlayback, topArtists } = await getSpotifyData();
+  const spotifyData = await getSpotifyData().catch(() => null);
+
+  if (!spotifyData) {
+    return (
+      <div className="mt-2 flex items-center gap-2 rounded-sm border bg-white/50 px-3 py-2 font-mono text-xs text-muted-foreground dark:bg-black/25">
+        <Image
+          src={SpotifyLogo}
+          alt="Spotify Logo"
+          width={14}
+          height={14}
+          draggable={false}
+        />
+        <span>Spotify unavailable</span>
+      </div>
+    );
+  }
+
+  const { currentPlayback, topArtists } = spotifyData;
 
   return (
     <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between md:space-x-4 mt-2 pl-3 pr-6">

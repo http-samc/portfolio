@@ -1,6 +1,22 @@
 import { readFileSync } from "fs";
 import path from "path";
-import type { FlightRoute } from "@/components/flights/flight-map";
+
+export type FlightRoute = {
+  departureCode: string;
+  departureCity: string;
+  departureCountry: string;
+  departureCountryCode: string;
+  departureLatitude: number;
+  departureLongitude: number;
+  arrivalCode: string;
+  arrivalCity: string;
+  arrivalCountry: string;
+  arrivalCountryCode: string;
+  arrivalLatitude: number;
+  arrivalLongitude: number;
+  distanceMiles: number;
+  durationSeconds: number;
+};
 
 const flightsCsvPath = path.join(process.cwd(), "src/data/flights.csv");
 
